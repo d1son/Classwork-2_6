@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var PORT = 8090;
+var PORT = process.env.PORT || 8090;
 
 app.use("/js", express.static("public/js"));
 app.use("/css", express.static("public/css"));
@@ -21,3 +21,5 @@ app.get("/dashboard", function(req, res) {
 app.listen(PORT, function() {
   console.log("Listening on port %s", PORT);
 });
+
+//take a look at shamoon's code for this part, to cretae dynamic routes
